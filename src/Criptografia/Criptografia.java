@@ -1,23 +1,44 @@
+
 package Criptografia;
 
-import java.util.Scanner;
-
+/**
+ *
+ * @author Rafael Walker
+ */
 public class Criptografia {
-
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        String palavra;
-        int tam;
-        int pos;
-        String[] normal = {"A","B","C","D","E","F","G","H","I","J","K","L","M",
-            "N","O","P","Q","R","S","T","U","V","X","Y","Z"};
-        String[] cesar = {"D","E","F","G","H","I","J","K","L","M","N",
-          "O","P","Q","R","S","T","U","V","X","Y","Z","A","B","C"};
-        String[] atbash = {"..."};
-        System.out.print("Informe a Palavra a ser Criptografada: ");
-        palavra = teclado.nextLine();
-        tam = palavra.length();
-        String[] caracter = palavra.split("");
-        
+    
+    private String palavra; 
+    void Criptografia(String palavra){
+        this.palavra = palavra;
     }
-}
+    
+    public static void cesar(String palavra){
+        char novaPalavra[] = new char[palavra.length()];
+        for(int i = 0; i < palavra.length();i++){
+            novaPalavra[i] = (char) (( palavra.charAt(i))+3); 
+            if(novaPalavra[i] >= 123){    
+            System.out.print((char)(novaPalavra[i]-26));
+            }else if (novaPalavra[i] == 35){
+                System.out.print(" ");
+            }else{
+                System.out.print((char)(novaPalavra[i]));
+            }
+        }
+            System.out.println("");
+    }
+    
+    public static void albam(String palavra){
+        char novaPalavra[] = new char[palavra.length()];
+        for(int i = 0; i < palavra.length();i++){
+            novaPalavra[i] = (char) (( palavra.charAt(i))+13); 
+            if(novaPalavra[i] >= 123){    
+            System.out.print((char)(novaPalavra[i]-26));
+            }else if (novaPalavra[i] == 45){
+                System.out.print(" ");
+            }else{
+                System.out.print((char)(novaPalavra[i]));
+            }
+            }
+            System.out.println("");
+        }
+    }
