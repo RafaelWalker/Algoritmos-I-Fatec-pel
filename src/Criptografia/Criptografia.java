@@ -5,6 +5,7 @@ package Criptografia;
  *
  * @author Rafael Walker
  */
+
 public class Criptografia {
     
     private String palavra; 
